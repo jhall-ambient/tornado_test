@@ -65,7 +65,7 @@ class PostHandler(BaseHandler):
                                <input type="text" name="message">
                                <input type="submit" value="Submit">
                            </form>
-                           You Wrote %s
+                           Hi JILL thanks for entering %s
                         </body>
                     </html>""" % self.get_argument("message"))
                    #"You wrote " + self.get_argument("message"))
