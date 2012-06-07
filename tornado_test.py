@@ -1,5 +1,7 @@
 import tornado.ioloop
 import tornado.web
+import tornado.httpserver
+import os
 
 class BaseHandler(tornado.web.RequestHandler):
     def initialize(self):
@@ -84,5 +86,7 @@ application = tornado.web.Application([
     ])
 
 if __name__ == "__main__":
-    application.listen(5000)
+    #application.listen(5000)
+    http_server = tornado.httpserver.HTTPServer(application)
+    http_server.listen(os.environ.get("PORT", 5000))
     tornado.ioloop.IOLoop.instance().start()

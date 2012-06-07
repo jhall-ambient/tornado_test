@@ -1,1 +1,1 @@
-web: gunicorn -k tornado --workers=4 --bind=0.0.0.0:$PORT tornado_test
+web: python tornado_test.py
