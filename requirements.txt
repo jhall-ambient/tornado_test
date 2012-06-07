@@ -1,2 +1,2 @@
-pyechonest==4.2.15
 tornado==2.0
+gunicorn==0.14.3
