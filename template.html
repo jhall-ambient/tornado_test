@@ -1,0 +1,16 @@
+<html>
+   <head>
+      <title>{{ title }}</title>
+   </head>
+   <body>
+     <ul>
+       {% for item in items %}
+         <li>{{ escape(item) }}</li>
+	 Item Length {{ len(item) }}
+	 JSON test {{ json_encode(item) }}
+       {% end %}
+       JSON all {{ json_encode(items) }}
+     </ul>
+   </body>
+ </html>
+

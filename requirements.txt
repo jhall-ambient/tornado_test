@@ -1,0 +1,2 @@
+pyechonest==4.2.15
+tornado==2.0
