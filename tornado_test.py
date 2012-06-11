@@ -1,6 +1,7 @@
 import tornado.ioloop
 import tornado.web
 import tornado.httpserver
+import tornado.database
 import os
 
 class BaseHandler(tornado.web.RequestHandler):
@@ -10,6 +11,13 @@ class BaseHandler(tornado.web.RequestHandler):
             print "got some arguments"
         print "Headers %s" % self.request.headers
         print "path %s" % self.request.path
+        try:
+            db = tornado.database.Connection("localhost", "tornado", "tornado",
+                                             "p@ss4tornado")
+            for article in db.query("SELECT * FROM users"):
+                print "User: %s, email: %s" % (article.username, article.email)
+        except Exception as e:
+            print "error connecting to db: %s" % e.message
         
         
     def get_current_user(self):
